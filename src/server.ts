@@ -3,6 +3,7 @@ import express from "express";
 import { applyMiddleware, applyRoutes } from "./utils";
 import middleware from "./middleware";
 import routes from "./services";
+import configuration from "./config";
 
 
 process.on("uncaughtException", e => {
@@ -17,7 +18,7 @@ const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000 } = configuration;
 const server = http.createServer(router);
 
 server.listen(PORT, () =>

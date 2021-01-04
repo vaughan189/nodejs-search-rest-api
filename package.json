@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npx tsc",
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "start:dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
     "start": "npx pm2 start pm2.yaml",
     "prod:start": "pm2-runtime ./dist/server.js",
     "test": "jest --coverage --verbose --passWithNoTests --silent"
@@ -36,6 +36,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pm2": "^4.5.1",
+    "redis": "^3.0.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "supertest": "^6.0.1",
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.19",
+    "@types/redis": "^2.8.28",
     "jest": "^26.6.3",
     "ts-jest": "^26.4.4"
   }
